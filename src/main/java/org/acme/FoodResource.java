@@ -25,7 +25,7 @@ public class FoodResource {
     @Transactional
     public Food createFood(
             @PathParam("userId")String userId,
-            Food entity) {
+            @Valid Food entity) {
         // apply userId automatically without calling entity.setUserId(userId);
         return entityManager.merge(entity);
     }
